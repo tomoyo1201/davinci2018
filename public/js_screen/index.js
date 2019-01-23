@@ -343,7 +343,7 @@ Circle.prototype = {
         if (this.effectFlag !== 0) {
           context.fillStyle = 'white';
           context.font = "bold 18px Arial";
-          context.fillText("Auch！", this.locX + ix * this.width + this.radius, this.locY + iy * this.height + this.radius);
+          context.fillText("ぐあぁっ！", this.locX + ix * this.width + this.radius, this.locY + iy * this.height + this.radius);
         }
       }
     }
