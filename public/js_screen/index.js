@@ -349,6 +349,7 @@ Circle.prototype = {
               + (circle.locY + iy * this.height - futureLocY) ** 2) {
               this.hitCommand = this.hitEvent();
               this.flag++;
+              this.deleteFlag++;
               this.effectFlag++;
             }
           }
