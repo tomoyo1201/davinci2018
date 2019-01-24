@@ -373,7 +373,7 @@ killing: function (circles){
     for (let iy = -1; iy < 2; iy++) {
       if(this.deleteFlag !== 0){
         if(Math.random()*100 < 25){
-          this.circles.splice(this.circles.indexOf(this.circle),1);
+          this.circles.splice(0,1);
         }
     }
   }
