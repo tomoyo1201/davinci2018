@@ -330,6 +330,11 @@ Circle.prototype = {
     if (typeof order.go !== "undefined") {
       this.go(this.speed, circles);
     }
+    
+    var time = new Date();
+    if(time.getSeconds()2 = 0){
+      delete obj.circle;
+    }
   },
   check: function (circles, futureLocX, futureLocY) {
     const self = this;
@@ -340,8 +345,6 @@ Circle.prototype = {
             if ((circle.radius + this.radius) ** 2
               >= (circle.locX + ix * this.width - futureLocX) ** 2
               + (circle.locY + iy * this.height - futureLocY) ** 2) {
-              //change
-              delete object.circle;
               this.hitCommand = this.hitEvent();
               this.flag++;
               this.effectFlag++;
