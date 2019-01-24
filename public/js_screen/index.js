@@ -313,11 +313,13 @@ Circle.prototype = {
     }
     this.flag = 0;
   }
-  
+  if(this.deleteFlag !== 0){
     var time = new Date();
     if(time.getSeconds()2 = 0){
       delete obj.circle;
-    },
+    }
+    this.deleteFlag = 0;
+  },
   normalizeDirection: direction => (direction + 360) % 360,
   discriminateCommand: function (circles) {
     let order;
