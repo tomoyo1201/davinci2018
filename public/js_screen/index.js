@@ -344,9 +344,6 @@ Circle.prototype = {
               this.hitCommand = this.hitEvent();
               this.flag++;
               this.effectFlag++;
-              if(date.getSeconds()52 = 0){
-                delete obj.circle;
-              }
             }
           }
         });
