@@ -314,15 +314,7 @@ Circle.prototype = {
         this.locY += this.height;
       }
     }
-    this.flag = 0;
-    /*
-  }
-  if(this.deleteFlag !== 0){
-    if(Math.random()*100 < 25){
-      circles.
-    }
-    this.deteleFlag = 0;
-    */
+    this.flag = 0;   
   },
   normalizeDirection: direction => (direction + 360) % 360,
   discriminateCommand: function (circles) {
@@ -374,7 +366,19 @@ Circle.prototype = {
     }
     this.effectFlag = 0;
   }
+},
+//change
+killing: function (circles){
+  for (let ix = -1; ix < 2; ix++) {
+    for (let iy = -1; iy < 2; iy++) {
+      if(this.deleteFlag !== 0){
+        if(Math.random()*100 < 25){
+          this.circles.splice(this.circles.indexOf(this.circle,1);
+        }
+    }
+  }
 };
+                              
 window.onload = function () {
   let url = location.href;
   let index = url.replace(/screen/g, "");
