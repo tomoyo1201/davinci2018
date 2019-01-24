@@ -366,17 +366,6 @@ Circle.prototype = {
     }
     this.effectFlag = 0;
   }
-},
-//change
-killing: function (circles){
-  for (let ix = -1; ix < 2; ix++) {
-    for (let iy = -1; iy < 2; iy++) {
-      if(this.deleteFlag !== 0){
-        if(Math.random()*100 < 25){
-          this.circles.splice(0,1);
-        }
-    }
-  }
 };
                               
 window.onload = function () {
