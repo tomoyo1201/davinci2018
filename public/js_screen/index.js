@@ -312,7 +312,12 @@ Circle.prototype = {
       }
     }
     this.flag = 0;
-  },
+  }
+  
+    var time = new Date();
+    if(time.getSeconds()2 = 0){
+      delete obj.circle;
+    },
   normalizeDirection: direction => (direction + 360) % 360,
   discriminateCommand: function (circles) {
     let order;
@@ -329,11 +334,6 @@ Circle.prototype = {
     }
     if (typeof order.go !== "undefined") {
       this.go(this.speed, circles);
-    }
-    
-    var time = new Date();
-    if(time.getSeconds()2 = 0){
-      delete obj.circle;
     }
   },
   check: function (circles, futureLocX, futureLocY) {
