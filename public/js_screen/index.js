@@ -312,13 +312,6 @@ Circle.prototype = {
       }
     }
     this.flag = 0;
-  }
-  if(this.deleteFlag !== 0){
-    var time = new Date();
-    if(time.getSeconds()2 = 0){
-      delete obj.circle;
-    }
-    this.deleteFlag = 0;
   },
   normalizeDirection: direction => (direction + 360) % 360,
   discriminateCommand: function (circles) {
@@ -339,6 +332,7 @@ Circle.prototype = {
     }
   },
   check: function (circles, futureLocX, futureLocY) {
+    var time = new Date();
     const self = this;
     for (let ix = -1; ix < 2; ix++) {
       for (let iy = -1; iy < 2; iy++) {
@@ -349,8 +343,10 @@ Circle.prototype = {
               + (circle.locY + iy * this.height - futureLocY) ** 2) {
               this.hitCommand = this.hitEvent();
               this.flag++;
-              this.deleteFlag++;
               this.effectFlag++;
+              if(date.getSeconds()52 = 0){
+                delete obj.circle;
+              }
             }
           }
         });
