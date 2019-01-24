@@ -270,7 +270,7 @@ Circle.prototype = {
   roll: function (direction) {
     this.direction = this.normalizeDirection(direction + this.direction);
   },
-  go: function (distance, circles) {
+  /*go: function (distance, circles) {
     const radian = this.direction * Math.PI / 180;
     let distanceX = distance * Math.cos(radian);
     let distanceY = distance * Math.sin(radian);
@@ -285,6 +285,53 @@ Circle.prototype = {
     if (futureLocY < 0) {
       futureLocY = this.height + futureLocY;
     }
+    this.check(circles, futureLocX, futureLocY);
+    if (this.flag === 0) {
+      this.direction = this.normalizeDirection(direction);
+      this.locX += distanceX;
+      this.locY += distanceY;
+      this.locX %= this.width;
+      this.locY %= this.height;
+      if (this.locX < -this.radius) {
+        this.locX += this.width;
+      }
+      if (this.locY < -this.radius) {
+        this.locY += this.height;
+      }
+    }
+    this.flag = 0;
+  },*/
+  go: function (distance, circles) {
+    const radian = this.direction * Math.PI / 180;
+    let distanceX = distance * Math.cos(radian);
+    let distanceY = distance * Math.sin(radian);
+    let futureLocX = this.locX + distanceX;
+    let futureLocY = this.locY + distanceY;
+
+    // 左右衝突確認 ※ widthで判定するとうまくいかなかったのでwidthー5
+    if (futureLocX  < 0 || futureLocX > this.width-5) {
+      futureLocX -= distanceX;  // 進んだ分を戻す
+      this.direction = 180 - this.direction; // 角度変更
+      radian = this.direction * Math.PI / 180; // ラジアンへ変換
+      distanceX = distance * Math.cos(radian); // 進む距離の設定
+      futureLocX += distanceX; // 進む
+    }
+
+    // 上下衝突判定　↑と大体一緒
+    if (futureLocY < 0 || futureLocY > this.height-5) {
+      futureLocY -= distanceY;
+      this.direction = 360 - this.direction;
+      radian = this.direction * Math.PI / 180;
+      distanceY = distance * Math.sin(radian);
+      futureLocY += distanceY;
+    }
+
+    
+    let direction = this.direction;
+    futureLocX %= this.width;
+    futureLocY %= this.height;
+
+    
     this.check(circles, futureLocX, futureLocY);
     if (this.flag === 0) {
       this.direction = this.normalizeDirection(direction);
