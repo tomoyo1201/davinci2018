@@ -215,6 +215,9 @@ const Circle = function (data, field) {
   this.direction = Math.floor(Math.random() * 360);
   this.flag = 0;
   this.effectFlag = 0;
+  //change
+  this.deleteFlag = 0;
+  
   this.checkCircle(field.circles);
 };
 Circle.prototype = {
@@ -312,6 +315,14 @@ Circle.prototype = {
       }
     }
     this.flag = 0;
+    /*
+  }
+  if(this.deleteFlag !== 0){
+    if(Math.random()*100 < 25){
+      circles.
+    }
+    this.deteleFlag = 0;
+    */
   },
   normalizeDirection: direction => (direction + 360) % 360,
   discriminateCommand: function (circles) {
@@ -344,6 +355,7 @@ Circle.prototype = {
               this.hitCommand = this.hitEvent();
               this.flag++;
               this.effectFlag++;
+              this.deleteFlag++;
             }
           }
         });
