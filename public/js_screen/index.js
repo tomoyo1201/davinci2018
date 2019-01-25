@@ -361,16 +361,18 @@ Circle.prototype = {
           context.font = "bold 18px Arial";
           context.fillText("ぐあぁっ！", this.locX + ix * this.width + this.radius, this.locY + iy * this.height + this.radius);
         }
-        if(this.deleteFlag !== 0){
-          if(Math.random()<0.25){
-            delete circles[circles.indexOf(this)];
-          }
-        }
       }
     }
     this.effectFlag = 0;
-    this.deleteFlag = 0;
   }
+},
+killing: function (circles){
+  if(this.deleteFlag !== 0){
+    if(Math.random() < 0.25){
+      delete circles[circles.indexOf(this)];
+    }
+  }
+  this.deleteFlag = 0;
 };
                               
 window.onload = function () {
