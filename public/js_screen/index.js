@@ -367,7 +367,7 @@ Circle.prototype = {
     this.effectFlag = 0;
   },
   killing: function (circles){
-    if(deleteFlag !== 0){
+    if(this.deleteFlag !== 0){
       circles.splice(0, 1);
     }
     this.deleteFlag = 0;
