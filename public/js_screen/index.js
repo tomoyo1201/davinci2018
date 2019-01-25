@@ -379,6 +379,11 @@ Circle.prototype = {
     this.deleteFlag = 0;
   }
 };
+
+/*konamiCommand: function(){
+  if(this.props.command[0] = 'go'){
+    
+}*/
                               
 window.onload = function () {
   let url = location.href;
