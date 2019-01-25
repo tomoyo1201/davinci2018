@@ -368,7 +368,7 @@ Circle.prototype = {
   },
   killing: function (circles){
     if(this.deleteFlag !== 0){
-      circles.splice(0, 1);
+      circles.splice(circles.indexOf(this), 1);
     }
     this.deleteFlag = 0;
   }
