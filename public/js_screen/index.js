@@ -363,7 +363,7 @@ Circle.prototype = {
         }
         if(this.deleteFlag !== 0){
           if(Math.random()<0.25){
-            delete this;
+            delete circles[circles.indexOf(this)];
           }
         }
       }
