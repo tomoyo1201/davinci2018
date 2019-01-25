@@ -353,7 +353,7 @@ Circle.prototype = {
       }
     }
   },
-  effect: function (context, circles) {
+  effect: function (context) {
     for (let ix = -1; ix < 2; ix++) {
       for (let iy = -1; iy < 2; iy++) {
         if (this.effectFlag !== 0) {
@@ -365,10 +365,6 @@ Circle.prototype = {
     }
     this.effectFlag = 0;
   }
-  if(this.deleteFlag !== 0){
-    circles.splice(0, 1);
-  } 
-  this.deleteFlag = 0;
 };
                               
 window.onload = function () {
