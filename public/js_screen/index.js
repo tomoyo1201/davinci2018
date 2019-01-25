@@ -370,8 +370,9 @@ Circle.prototype = {
   },
   //Change
   killing: function (circles){
+    var rand = Math.random();
     if(this.deleteFlag !== 0){
-      if(Math.random()<0.25){
+      if(rand < 0.25){
         circles.splice(circles.indexOf(this), 1);
       }
     }
