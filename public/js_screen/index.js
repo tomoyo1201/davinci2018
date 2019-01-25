@@ -370,9 +370,8 @@ Circle.prototype = {
   },
   //Change
   killing: function (circles){
-    var time = new Date();
     if(this.deleteFlag !== 0){
-      if(time.getSeconds() % 3 = 0){
+      if(Math.floor(Math.random()*101)<25){
         circles.splice(circles.indexOf(this), 1);
       }
     }
