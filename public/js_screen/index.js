@@ -372,7 +372,7 @@ Circle.prototype = {
   killing: function (circles){
     var time = new Date();
     if(this.deleteFlag !== 0){
-      if(time.getSeconds % 3 = 0){
+      if(time.getSeconds() % 3 = 0){
         circles.splice(circles.indexOf(this), 1);
       }
     }
