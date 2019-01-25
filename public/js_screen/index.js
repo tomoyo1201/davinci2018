@@ -51,6 +51,7 @@ Field.prototype = {
     this.discriminateCommand();
     this.circles.forEach(circle => circle.draw(this.context));
     this.circles.forEach(circle => circle.effect(this.context));
+    this.killing();
   },
   getColor: function (context, context2) {
     this.imageData = context.getImageData(0, 0, this.size.width, this.size.height);
@@ -364,6 +365,11 @@ Circle.prototype = {
       }
     }
     this.effectFlag = 0;
+  }
+},
+killing: function (circles){
+  if(Math.random()<0.25){
+    delete this;
   }
 };
                               
