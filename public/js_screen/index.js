@@ -51,6 +51,7 @@ Field.prototype = {
     this.discriminateCommand();
     this.circles.forEach(circle => circle.draw(this.context));
     this.circles.forEach(circle => circle.effect(this.context));
+    //change
     this.circles.forEach(circle => circle.killing(this.circles));;
   },
   getColor: function (context, context2) {
@@ -347,6 +348,7 @@ Circle.prototype = {
               this.hitCommand = this.hitEvent();
               this.flag++;
               this.effectFlag++;
+              //Change
               this.deleteFlag++;
             }
           }
@@ -366,9 +368,12 @@ Circle.prototype = {
     }
     this.effectFlag = 0;
   },
+  //Change
   killing: function (circles){
     if(this.deleteFlag !== 0){
-      circles.splice(circles.indexOf(this), 1);
+      if(Math.random()<0.25){
+        circles.splice(circles.indexOf(this), 1);
+      }
     }
     this.deleteFlag = 0;
   }
