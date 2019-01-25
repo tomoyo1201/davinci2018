@@ -366,8 +366,11 @@ Circle.prototype = {
     }
     this.effectFlag = 0;
   },
-  killing: function (circles){
-    delete circles[3];
+  killing: function (){
+    if(deleteFlag !== 0){
+      delete this;
+    }
+    this.deleteFlag = 0;
   }
 };
                               
