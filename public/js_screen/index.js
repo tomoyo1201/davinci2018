@@ -335,7 +335,6 @@ Circle.prototype = {
     }
   },
   check: function (circles, futureLocX, futureLocY) {
-    var time = new Date();
     const self = this;
     for (let ix = -1; ix < 2; ix++) {
       for (let iy = -1; iy < 2; iy++) {
@@ -362,9 +361,14 @@ Circle.prototype = {
           context.font = "bold 18px Arial";
           context.fillText("ぐあぁっ！", this.locX + ix * this.width + this.radius, this.locY + iy * this.height + this.radius);
         }
+        if(this.deleteFlag !== 0){
+          if(Math.random()<0.25){
+            delete this;
+          }
       }
     }
     this.effectFlag = 0;
+    this.deleteFlag = 0;
   }
 };
                               
