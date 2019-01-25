@@ -365,11 +365,11 @@ Circle.prototype = {
       }
     }
     this.effectFlag = 0;
-  }
-},
-killing: function (circles){
-  if(Math.random()<0.25){
-    delete this;
+  },
+  killing: function (circles){
+    if(Math.random()<0.25){
+      delete this;
+    }
   }
 };
                               
