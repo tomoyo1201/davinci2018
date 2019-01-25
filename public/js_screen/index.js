@@ -365,6 +365,7 @@ Circle.prototype = {
           if(Math.random()<0.25){
             delete this;
           }
+        }
       }
     }
     this.effectFlag = 0;
