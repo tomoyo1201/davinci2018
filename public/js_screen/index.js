@@ -353,7 +353,7 @@ Circle.prototype = {
       }
     }
   },
-  effect: function (circles, context) {
+  effect: function (context, circles) {
     for (let ix = -1; ix < 2; ix++) {
       for (let iy = -1; iy < 2; iy++) {
         if (this.effectFlag !== 0) {
