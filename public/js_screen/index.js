@@ -52,7 +52,7 @@ Field.prototype = {
     this.circles.forEach(circle => circle.draw(this.context));
     this.circles.forEach(circle => circle.effect(this.context));
     //change
-    this.circles.forEach(circle => circle.killing(this.circles));;
+    this.circles.forEach(circle => circle.killing(this.context, this.circles));;
   },
   getColor: function (context, context2) {
     this.imageData = context.getImageData(0, 0, this.size.width, this.size.height);
@@ -369,9 +369,10 @@ Circle.prototype = {
     this.effectFlag = 0;
   },
   //Change
-  killing: function (circles){
+  killing: function (context, circles){
     if(this.deleteFlag !== 0){
       if(Math.floor(Math.random()*101)<25){
+        this.shadeDraw(context);
         circles.splice(circles.indexOf(this), 1);
       }
     }
