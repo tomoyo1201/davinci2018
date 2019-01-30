@@ -151,6 +151,7 @@ Field.prototype = {
   addCircle: function (circle) {
     this.circles.push(circle);
     this.checkNumber(circle.color);
+    consol.log(circle.command);
   },
   winner: function (score) {
     // const names = {
@@ -379,7 +380,7 @@ Circle.prototype = {
       }
     }
     this.deleteFlag = 0;
-  },
+  /*},
   konamiCommand: function(circles){
     if(this.commandFlag === 0){
       if(this.props.command[0] === 'go'){
@@ -406,7 +407,7 @@ Circle.prototype = {
       }
       this.commandFlag = 0;
     }
-  }
+  }*/
 };
                               
 window.onload = function () {
