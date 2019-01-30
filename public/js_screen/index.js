@@ -380,7 +380,7 @@ Circle.prototype = {
       }
     }
     this.deleteFlag = 0;
-  }/*,
+  },
   konamiCommand: function(circles){
     if(this.commandFlag === 0){
       if(this.props.command[0] === 'go'){
@@ -407,7 +407,7 @@ Circle.prototype = {
       }
       this.commandFlag = 0;
     }
-  }*/
+  }
 };
                               
 window.onload = function () {
