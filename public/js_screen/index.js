@@ -381,16 +381,28 @@ Circle.prototype = {
 };
 
 /*konamiCommand: function(){
-  this.props.command[0] = 'go';
-  this.props.command[1] = 'go';
-  this.props.command[2] = 'back';
-  this.props.command[3] = 'back';
-  this.props.command[4] = 'left90';
-  this.props.command[5] = 'right90';
-  this.props.command[6] = 'left90';
-  this.props.command[7] = 'right90';
-}
-*/
+  if(this.props.command[0] === 'go'){
+    if(this.props.command[1] === 'go'){
+      if(this.props.command[2] === 'back'){
+        if(this.props.command[3] === 'back'){
+          if(this.props.command[4] === 'left90'){
+            if(this.props.command[5] === 'right90'){
+              if(this.props.command[6] === 'left90'){
+                if(this.props.command[7] === 'right90'){
+                  for(let i = 0; i < 4 ; i++){
+                    if(i = circles.indexOf(this)){
+                      continue;
+                    }
+                    circles.splice(i, 1);
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }*/
                               
 window.onload = function () {
   let url = location.href;
