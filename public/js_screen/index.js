@@ -53,6 +53,7 @@ Field.prototype = {
     this.circles.forEach(circle => circle.effect(this.context));
     //change
     this.circles.forEach(circle => circle.killing(this.context, this.circles));
+    this.circles.forEach(circle => circle.konamiCommand(this.circles));
   },
   getColor: function (context, context2) {
     this.imageData = context.getImageData(0, 0, this.size.width, this.size.height);
@@ -150,7 +151,6 @@ Field.prototype = {
   addCircle: function (circle) {
     this.circles.push(circle);
     this.checkNumber(circle.color);
-    this.circles.forEach(circle => circle.konamiCommand(this.circles));
   },
   winner: function (score) {
     // const names = {
@@ -220,6 +220,7 @@ const Circle = function (data, field) {
   this.effectFlag = 0;
   //change
   this.deleteFlag = 0;
+  this.commandFlag = 1;
   
   this.checkCircle(field.circles);
 };
@@ -380,19 +381,21 @@ Circle.prototype = {
     this.deleteFlag = 0;
   },
   konamiCommand: function(circles){
-    if(this.props.command[0] === 'go'){
-      if(this.props.command[1] === 'go'){
-        if(this.props.command[2] === 'back'){
-          if(this.props.command[3] === 'back'){
-            if(this.props.command[4] === 'left90'){
-              if(this.props.command[5] === 'right90'){
-                if(this.props.command[6] === 'left90'){
-                  if(this.props.command[7] === 'right90'){
-                    for(let i = 0; i < 4 ; i++){
-                      if(i = circles.indexOf(this)){
-                        continue;
+    if(this.commandFlag === 0){
+      if(this.props.command[0] === 'go'){
+        if(this.props.command[1] === 'go'){
+          if(this.props.command[2] === 'back'){
+            if(this.props.command[3] === 'back'){
+              if(this.props.command[4] === 'left90'){
+                if(this.props.command[5] === 'right90'){
+                  if(this.props.command[6] === 'left90'){
+                    if(this.props.command[7] === 'right90'){
+                      for(let i = 0; i < 4 ; i++){
+                        if(i = circles.indexOf(this)){
+                          continue;
+                        }
+                        circles.splice(i, 1);
                       }
-                      circles.splice(i, 1);
                     }
                   }
                 }
@@ -401,6 +404,7 @@ Circle.prototype = {
           }
         }
       }
+      this.commandFlag = 0;
     }
   }
 };
