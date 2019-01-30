@@ -382,8 +382,8 @@ Circle.prototype = {
   },
   konamiCommand: function(circles){
     if(this.commandFlag === 0){
-      if(this.props.command[0] === {go: 15}){
-        if(this.props.command[1] === {go: 15}){
+      if(this.props.command[0] === {go: 10}){
+        if(this.props.command[1] === {go: 10}){
           if(this.props.command[2] === {roll: 180}){
             if(this.props.command[3] === {roll: 180}){
               if(this.props.command[4] === {roll: -90}){
