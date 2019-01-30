@@ -382,6 +382,7 @@ Circle.prototype = {
   },
   konamiCommand: function(circles){
     if(this.commandFlag === 0){
+      this.command.rewind();
       if(this.command.next().value === {go: 10}){
         if(this.command.next().value === {go: 10}){
           if(this.command.next().value === {roll: 180}){
