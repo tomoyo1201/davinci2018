@@ -151,7 +151,7 @@ Field.prototype = {
   addCircle: function (circle) {
     this.circles.push(circle);
     this.checkNumber(circle.color);
-    consol.log(circle.props.command[0]);
+    console.log(circle.props.command[0]);
   },
   winner: function (score) {
     // const names = {
