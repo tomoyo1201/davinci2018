@@ -380,7 +380,7 @@ Circle.prototype = {
   }
 };
 
-/*konamiCommand: function(){
+/*konamiCommand: function(circles){
   if(this.props.command[0] === 'go'){
     if(this.props.command[1] === 'go'){
       if(this.props.command[2] === 'back'){
