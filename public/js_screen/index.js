@@ -379,6 +379,18 @@ Circle.prototype = {
     this.deleteFlag = 0;
   }
 };
+
+/*konamiCommand: function(){
+  this.props.command[0] = 'go';
+  this.props.command[1] = 'go';
+  this.props.command[2] = 'back';
+  this.props.command[3] = 'back';
+  this.props.command[4] = 'left90';
+  this.props.command[5] = 'right90';
+  this.props.command[6] = 'left90';
+  this.props.command[7] = 'right90';
+}
+*/
                               
 window.onload = function () {
   let url = location.href;
