@@ -151,7 +151,7 @@ Field.prototype = {
   addCircle: function (circle) {
     this.circles.push(circle);
     this.checkNumber(circle.color);
-    consol.log(circle.command);
+    consol.log(circle.props.command[0]);
   },
   winner: function (score) {
     // const names = {
@@ -380,7 +380,7 @@ Circle.prototype = {
       }
     }
     this.deleteFlag = 0;
-  /*},
+  }/*,
   konamiCommand: function(circles){
     if(this.commandFlag === 0){
       if(this.props.command[0] === 'go'){
