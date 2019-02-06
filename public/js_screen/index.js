@@ -215,7 +215,7 @@ const Circle = function (data, field) {
   this.locX = Math.floor(Math.random() * (this.width - 100) + 50);
   this.locY = Math.floor(Math.random() * (this.height - 100) + 50);
   this.radius = this.width / (this.speed + 1) / 15;
-  this.direction = 0;//Math.floor(Math.random() * 360);
+  this.direction = Math.floor(Math.random() * 360);
   this.flag = 0;
   this.effectFlag = 0;
   //change
@@ -309,7 +309,7 @@ Circle.prototype = {
       this.direction = this.normalizeDirection(direction);
       this.locX += distanceX;
       this.locY += distanceY;
-      /*this.locX %= this.width;
+      this.locX %= this.width;
       this.locY %= this.height;
       if (this.locX < -this.radius) {
         this.locX += this.width;
@@ -317,7 +317,7 @@ Circle.prototype = {
       if (this.locY < -this.radius) {
         this.locY += this.height;
       }
-    }*/
+    }
     this.flag = 0;   
   },
   normalizeDirection: direction => (direction + 360) % 360,
