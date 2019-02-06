@@ -215,7 +215,7 @@ const Circle = function (data, field) {
   this.locX = Math.floor(Math.random() * (this.width - 100) + 50);
   this.locY = Math.floor(Math.random() * (this.height - 100) + 50);
   this.radius = this.width / (this.speed + 1) / 15;
-  this.direction = 60;//Math.floor(Math.random() * 360);
+  this.direction = 0;//Math.floor(Math.random() * 360);
   this.flag = 0;
   this.effectFlag = 0;
   //change
