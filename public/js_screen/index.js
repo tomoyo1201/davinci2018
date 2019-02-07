@@ -52,7 +52,7 @@ Field.prototype = {
     this.circles.forEach(circle => circle.draw(this.context));
     this.circles.forEach(circle => circle.effect(this.context));
     //change
-    this.circles.forEach(circle => circle.killing(this.context, this.circles));
+    this.circles.forEach(circle => circle.delete(this.context, this.circles));
     this.circles.forEach(circle => circle.konamiCommand(this.circles));
   },
   getColor: function (context, context2) {
