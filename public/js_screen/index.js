@@ -340,13 +340,13 @@ Circle.prototype = {
   },
   check: function (circles, futureLocX, futureLocY) {
     const self = this;
-    for (let ix = -1; ix < 2; ix++) {
-      for (let iy = -1; iy < 2; iy++) {
+    //for (let ix = -1; ix < 2; ix++) {
+      //for (let iy = -1; iy < 2; iy++) {
         circles.forEach(circle => {
           if (circle !== self) {
             if ((circle.radius + this.radius) ** 2
-              >= (circle.locX + ix * this.width - futureLocX) ** 2
-              + (circle.locY + iy * this.height - futureLocY) ** 2) {
+              >= (circle.locX /*+ ix * this.width*/ - futureLocX) ** 2
+              + (circle.locY /*+ iy * this.height*/ - futureLocY) ** 2) {
               this.hitCommand = this.hitEvent();
               this.flag++;
               this.effectFlag++;
@@ -355,8 +355,8 @@ Circle.prototype = {
             }
           }
         });
-      }
-    }
+      //}
+    //}
   },
   effect: function (context) {
     for (let ix = -1; ix < 2; ix++) {
