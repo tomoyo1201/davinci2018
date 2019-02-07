@@ -371,7 +371,7 @@ Circle.prototype = {
     this.effectFlag = 0;
   },
   //Change
-  killing: function (context, circles){
+  delete: function (context, circles){
     if(this.deleteFlag !== 0){
       if(Math.floor(Math.random()*101)<15){
         this.shadeDraw(context);
