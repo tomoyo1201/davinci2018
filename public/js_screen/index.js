@@ -373,7 +373,7 @@ Circle.prototype = {
   //Change
   delete: function (context, circles){
     if(this.deleteFlag !== 0){
-      if(Math.floor(Math.random()*101)<15){
+      if(Math.floor(Math.random()*101)<20){
         this.shadeDraw(context);
         circles.splice(circles.indexOf(this), 1);
       }
